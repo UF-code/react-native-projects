@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
-import { Card, Cover } from 'react-native-paper'
+import { Card } from 'react-native-paper'
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
