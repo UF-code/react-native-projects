@@ -1,0 +1,1 @@
+print('garbage can')
