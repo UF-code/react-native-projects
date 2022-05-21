@@ -1,7 +1,7 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar'
 import { StatusBar, SafeAreaView, StyleSheet, Text, View, Platform } from 'react-native'
 
-const isAndroid = Platform.OS === 'android'
+// const isAndroid = Platform.OS === 'android'
 
 console.log(StatusBar.currentHeight)
 
