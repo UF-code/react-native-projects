@@ -6,11 +6,15 @@ import { RestaurantInfoCard } from '../components/restaurant-info-card.component
 //
 import styled from 'styled-components/native'
 
-const Search = styled(View)`
+const SafeArea = styled(SafeAreaView)`
+    flex: 1;
+    margin-top: ${StatusBar.currentHeight}px;
+`
+const SearchContainer = styled(View)`
     padding: 16px;
     background-color: #fff;
 `
-const List = styled(View)`
+const RestaurantListContainer = styled(View)`
     flex: 1;
     padding: 16px;
     background-color: aqua;
@@ -20,16 +24,14 @@ const List = styled(View)`
 // console.log(StatusBar.currentHeight)
 
 export const RestaurantScreen = () => (
-    <SafeAreaView style={styles.container}>
-        <Search>
+    <SafeArea>
+        <SearchContainer>
             <Searchbar placeholder='Search' />
-        </Search>
-        <List>
+        </SearchContainer>
+        <RestaurantListContainer>
             <RestaurantInfoCard />
-        </List>
-    </SafeAreaView>
+        </RestaurantListContainer>
+    </SafeArea>
 )
 
-const styles = StyleSheet.create({
-    container: { flex: 1, marginTop: StatusBar.currentHeight },
-})
+const styles = StyleSheet.create({})
