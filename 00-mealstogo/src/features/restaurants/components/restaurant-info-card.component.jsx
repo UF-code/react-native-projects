@@ -1,50 +1,25 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Text, StyleSheet, View, Image } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Card } from 'react-native-paper'
 import { SvgXml } from 'react-native-svg'
 import star from '../../../../assets/star'
 import open from '../../../../assets/open'
 //
 import { Spacer } from '../../../components/spacer/spacer.component.jsx'
-
-const RestaurantCard = styled(Card)`
-    background-color: ${(props) => props.theme.colors.bg.primary};
-`
-const RestaurantCardCover = styled(Card.Cover)`
-    padding: ${(props) => props.theme.space[3]};
-    background-color: ${(props) => props.theme.colors.bg.primary};
-`
-const Title = styled.Text`
-    padding: ${(props) => props.theme.space[3]};
-    color: ${(props) => props.theme.colors.ui.primary};
-    font-family: ${(props) => props.theme.fonts.body};
-    font-size: ${(props) => props.theme.fontSizes.body};
-`
-const Info = styled(View)`
-    padding: ${(props) => props.theme.space[3]};
-`
-const Address = styled(Text)`
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-size: ${(props) => props.theme.fontSizes.caption};
-`
-const Rating = styled(View)`
-    flex-direction: row;
-    padding-top: ${(props) => props.theme.space[2]};
-    padding-bottom: ${(props) => props.theme.space[2]};
-`
-const Section = styled(View)`
-    flex-direction: row;
-    align-items: center;
-`
-const SectionEnd = styled(View)`
-    flex: 1;
-    flex-direction: row;
-    justify-content: flex-end;
-`
-const Open = styled(SvgXml)`
-    flex-direction: row;
-`
+import { Text } from '../../../components/typography/text.component.jsx'
+// styles
+import {
+    Icon,
+    RestaurantCard,
+    RestaurantCardCover,
+    Info,
+    Address,
+    Rating,
+    Section,
+    SectionEnd,
+    Open,
+} from './restaurant-info-card.styles.jsx'
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
@@ -66,7 +41,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             <RestaurantCardCover key={name} source={{ uri: photos[0] }} style={styles.cover} />
 
             <Info>
-                <Title>{name}</Title>
+                <Text variant={'label'}>{name}</Text>
 
                 <Section>
                     <Rating>
@@ -76,7 +51,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                     </Rating>
                     <SectionEnd>
                         {isClosedTemporarily && (
-                            <Text variant='label' style={{ color: 'red' }}>
+                            <Text variant='error' style={{ color: 'red' }}>
                                 CLOSED TEMPORARILY
                             </Text>
                         )}
@@ -86,7 +61,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                         </Spacer>
 
                         <Spacer position='left' size='large'>
-                            <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+                            <Icon source={{ uri: icon }} />
                         </Spacer>
                     </SectionEnd>
                 </Section>
