@@ -1,7 +1,7 @@
 import React from 'react'
 import star from '../../../../assets/star'
 import open from '../../../../assets/open'
-//
+// components
 import { Spacer } from '../../../components/spacer/spacer.component.jsx'
 import { Text } from '../../../components/typography/text.component.jsx'
 // styles
