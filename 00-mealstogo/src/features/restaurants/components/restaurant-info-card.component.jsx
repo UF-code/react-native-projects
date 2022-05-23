@@ -1,8 +1,4 @@
 import React from 'react'
-import styled from 'styled-components/native'
-import { StyleSheet } from 'react-native'
-import { Card } from 'react-native-paper'
-import { SvgXml } from 'react-native-svg'
 import star from '../../../../assets/star'
 import open from '../../../../assets/open'
 //
@@ -11,14 +7,15 @@ import { Text } from '../../../components/typography/text.component.jsx'
 // styles
 import {
     Icon,
+    Info,
     RestaurantCard,
     RestaurantCardCover,
-    Info,
     Address,
     Rating,
     Section,
     SectionEnd,
     Open,
+    Star,
 } from './restaurant-info-card.styles.jsx'
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -38,7 +35,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
     return (
         <RestaurantCard elevation={5}>
-            <RestaurantCardCover key={name} source={{ uri: photos[0] }} style={styles.cover} />
+            <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
 
             <Info>
                 <Text variant={'label'}>{name}</Text>
@@ -46,7 +43,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 <Section>
                     <Rating>
                         {ratingArray.map(() => (
-                            <SvgXml xml={star} width={20} height={20} />
+                            <Star xml={star} width={20} height={20} />
                         ))}
                     </Rating>
                     <SectionEnd>
@@ -71,5 +68,3 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         </RestaurantCard>
     )
 }
-
-const styles = StyleSheet.create({})

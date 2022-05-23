@@ -16,7 +16,7 @@ export const RestaurantCardCover = styled(Card.Cover)`
 export const Info = styled.View`
     padding: ${(props) => props.theme.space[3]};
 `
-export const Address = styled(Text)`
+export const Address = styled.Text`
     font-family: ${(props) => props.theme.fonts.heading};
     font-size: ${(props) => props.theme.fontSizes.caption};
 `
@@ -37,3 +37,4 @@ export const SectionEnd = styled.View`
 export const Open = styled(SvgXml)`
     flex-direction: row;
 `
+export const Star = styled(SvgXml)``
