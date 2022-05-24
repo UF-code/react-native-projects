@@ -1,14 +1,5 @@
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import AppNavigator from './AppNavigator/AppNavigator.jsx'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import HomeScreen from './src/Screens/HomeScreen.jsx'
 
 export default function App() {
-    return (
-        <SafeAreaProvider>
-            <NavigationContainer>
-                <AppNavigator />
-            </NavigationContainer>
-        </SafeAreaProvider>
-    )
+    return <HomeScreen />
 }

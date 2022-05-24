@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button, Switch } from 'react-native'
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
     const [mode, setMode] = useState(false)
     return (
         <View style={styles.container}>
             <Text style={styles.text}>HomeScreen</Text>
 
             <Switch value={mode} onValueChange={() => setMode((value) => !value)} />
-
-            <View style={styles.button}>
-                <Button title='View Profile' onPress={() => navigation.navigate('Profile')} />
-            </View>
         </View>
     )
 }
