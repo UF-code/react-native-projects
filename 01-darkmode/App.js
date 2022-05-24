@@ -1,9 +1,14 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
-
-// Screens
-import HomeScreen from './src/Screens/HomeScreen.jsx'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import AppNavigator from './AppNavigator/AppNavigator.jsx'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
-    return <HomeScreen />
+    return (
+        <SafeAreaProvider>
+            <NavigationContainer>
+                <AppNavigator />
+            </NavigationContainer>
+        </SafeAreaProvider>
+    )
 }
