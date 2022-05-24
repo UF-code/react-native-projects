@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button, Switch } from 'react-native'
 
+import { EventRegister } from 'react-native-event-listeners'
+
 const HomeScreen = () => {
     const [mode, setMode] = useState(false)
     return (
         <View style={styles.container}>
             <Text style={styles.text}>HomeScreen</Text>
 
-            <Switch value={mode} onValueChange={() => setMode((value) => !value)} />
+            <Switch
+                value={mode}
+                onValueChange={() => {
+                    setMode((value) => !value)
+                    EventRegister.emit('changeTheme', mode)
+                }}
+            />
         </View>
     )
 }
