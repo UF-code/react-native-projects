@@ -11,6 +11,8 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 //
 import { SafeArea } from './src/components/utility/safe-area.component.jsx'
 //
+import { Ionicons } from '@expo/vector-icons'
+//
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 const Tab = createBottomTabNavigator()
@@ -25,6 +27,33 @@ const Map = () => (
         <Text>Map</Text>
     </SafeArea>
 )
+
+const TAB_ICON = {
+    Restaurants: 'md-restaurant',
+    Map: 'md-map',
+    Settings: 'md-settings',
+}
+
+//
+// const tabBarIcon =
+//     (iconName) =>
+//     ({ size, color }) =>
+//         <Ionicons name={iconName} size={size} color={color} />
+
+// const screenOptions = ({ route }) => {
+//     const iconName = TAB_ICON[route.name]
+//     return {
+//         tabBarIcon: tabBarIcon(iconName),
+//     }
+// }
+
+// const tabBarIcon = ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />
+const createScreenOptions = ({ route }) => {
+    const iconName = TAB_ICON[route.name]
+    return {
+        tabBarIcon: ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />,
+    }
+}
 
 export default function App() {
     const [oswaldLoaded] = useOswald({
@@ -42,7 +71,10 @@ export default function App() {
         <>
             <ThemeProvider theme={theme}>
                 <NavigationContainer>
-                    <Tab.Navigator>
+                    <Tab.Navigator
+                        screenOptions={createScreenOptions}
+                        tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }}
+                    >
                         <Tab.Screen name='Restaurants' component={Restaurants} />
                         <Tab.Screen name='Map' component={Map} />
                         <Tab.Screen name='Settings' component={Settings} />
