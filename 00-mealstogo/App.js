@@ -11,7 +11,7 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 //
 import { SafeArea } from './src/components/utility/safe-area.component.jsx'
 //
-import { restaurantsRequest } from './src/services/restaurants/restaurants.service.jsx'
+
 //
 import { Ionicons } from '@expo/vector-icons'
 //
