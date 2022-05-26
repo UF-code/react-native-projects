@@ -11,7 +11,7 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 //
 import { SafeArea } from './src/components/utility/safe-area.component.jsx'
 //
-
+import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context.jsx'
 //
 import { Ionicons } from '@expo/vector-icons'
 //
@@ -36,19 +36,6 @@ const TAB_ICON = {
     Settings: 'md-settings',
 }
 
-//
-// const tabBarIcon =
-//     (iconName) =>
-//     ({ size, color }) =>
-//         <Ionicons name={iconName} size={size} color={color} />
-
-// const screenOptions = ({ route }) => {
-//     const iconName = TAB_ICON[route.name]
-//     return {
-//         tabBarIcon: tabBarIcon(iconName),
-//     }
-// }
-
 // const tabBarIcon = ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />
 const createScreenOptions = ({ route }) => {
     const iconName = TAB_ICON[route.name]
@@ -72,18 +59,20 @@ export default function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <NavigationContainer>
-                    <Tab.Navigator
-                        screenOptions={createScreenOptions}
-                        tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }}
-                    >
-                        <Tab.Screen name='Restaurants' component={Restaurants} />
-                        <Tab.Screen name='Map' component={Map} />
-                        <Tab.Screen name='Settings' component={Settings} />
-                    </Tab.Navigator>
-                </NavigationContainer>
-                <ExpoStatusBar style='auto' />
+                <RestaurantsContextProvider>
+                    <NavigationContainer>
+                        <Tab.Navigator
+                            screenOptions={createScreenOptions}
+                            tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }}
+                        >
+                            <Tab.Screen name='Restaurants' component={Restaurants} />
+                            <Tab.Screen name='Map' component={Map} />
+                            <Tab.Screen name='Settings' component={Settings} />
+                        </Tab.Navigator>
+                    </NavigationContainer>
+                </RestaurantsContextProvider>
             </ThemeProvider>
+            <ExpoStatusBar style='auto' />
         </>
     )
 }

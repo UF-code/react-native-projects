@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FlatList } from 'react-native'
 import { Searchbar } from 'react-native-paper'
 // COMPONENTS
@@ -7,6 +7,8 @@ import { Spacer } from '../../../components/spacer/spacer.component.jsx'
 import { SafeArea } from '../../../components/utility/safe-area.component.jsx'
 //
 import styled from 'styled-components/native'
+//
+import { RestaurantsContext } from '../../../services/restaurants/restaurants.context.jsx'
 
 const SearchContainer = styled.View`
     padding: ${(props) => props.theme.space[3]};
@@ -25,32 +27,25 @@ const RestaurantList = styled(FlatList).attrs({
 // const isAndroid = Platform.OS === 'android'
 // console.log(StatusBar.currentHeight)
 
-export const RestaurantScreen = () => (
-    <>
-        <SearchContainer>
-            <Searchbar placeholder='Search' />
-        </SearchContainer>
+export const RestaurantScreen = () => {
+    const restaurantContext = useContext(RestaurantsContext)
+    console.log(restaurantContext)
+    return (
+        <>
+            <SearchContainer>
+                <Searchbar placeholder='Search' />
+            </SearchContainer>
 
-        <RestaurantList
-            data={[
-                { name: 1 },
-                { name: 2 },
-                { name: 3 },
-                { name: 4 },
-                { name: 5 },
-                { name: 6 },
-                { name: 7 },
-                { name: 8 },
-                { name: 9 },
-                { name: 10 },
-            ]}
-            renderItem={() => (
-                <Spacer position='bottom' size='large'>
-                    <RestaurantInfoCard />
-                </Spacer>
-            )}
-            keyExtractor={(item) => item.name}
-            // contentContainerStyle={{padding: 16}}
-        />
-    </>
-)
+            <RestaurantList
+                data={restaurantContext.restaurants}
+                renderItem={() => (
+                    <Spacer position='bottom' size='large'>
+                        <RestaurantInfoCard />
+                    </Spacer>
+                )}
+                keyExtractor={(item) => item.name}
+                // contentContainerStyle={{padding: 16}}
+            />
+        </>
+    )
+}
