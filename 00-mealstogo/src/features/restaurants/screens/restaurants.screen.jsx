@@ -3,6 +3,7 @@ import { FlatList } from 'react-native'
 import { Searchbar } from 'react-native-paper'
 // COMPONENTS
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component.jsx'
+import { Search } from '../components/search.components.jsx'
 import { Spacer } from '../../../components/spacer/spacer.component.jsx'
 import { SafeArea } from '../../../components/utility/safe-area.component.jsx'
 //
@@ -11,11 +12,6 @@ import styled from 'styled-components/native'
 import { ActivityIndicator, Colors } from 'react-native-paper'
 //
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context.jsx'
-
-const SearchContainer = styled.View`
-    padding: ${(props) => props.theme.space[3]};
-    background-color: ${(props) => props.theme.colors.bg.primary};
-`
 
 // const RestaurantList = styled(FlatList)`
 //     padding: 16px;
@@ -48,9 +44,8 @@ export const RestaurantScreen = () => {
                     <Loading size={50} animating={true} color={Colors.blue300} />
                 </LoadingContainer>
             )}
-            <SearchContainer>
-                <Searchbar placeholder='Search' />
-            </SearchContainer>
+
+            <Search />
 
             <RestaurantList
                 data={restaurants}
