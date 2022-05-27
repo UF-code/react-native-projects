@@ -40,8 +40,7 @@ const LoadingContainer = styled.View`
 
 export const RestaurantScreen = () => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext)
-    if (isLoading) {
-    }
+
     return (
         <>
             {isLoading && (
