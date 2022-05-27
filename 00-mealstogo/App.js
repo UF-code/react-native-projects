@@ -10,8 +10,9 @@ import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/osw
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 //
 import { SafeArea } from './src/components/utility/safe-area.component.jsx'
-//
+// Providers
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context.jsx'
+import { LocationContextProvider } from './src/services/location/location.context.jsx'
 //
 import { Ionicons } from '@expo/vector-icons'
 //
@@ -59,18 +60,20 @@ export default function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <RestaurantsContextProvider>
-                    <NavigationContainer>
-                        <Tab.Navigator
-                            screenOptions={createScreenOptions}
-                            tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }}
-                        >
-                            <Tab.Screen name='Restaurants' component={Restaurants} />
-                            <Tab.Screen name='Map' component={Map} />
-                            <Tab.Screen name='Settings' component={Settings} />
-                        </Tab.Navigator>
-                    </NavigationContainer>
-                </RestaurantsContextProvider>
+                <LocationContextProvider>
+                    <RestaurantsContextProvider>
+                        <NavigationContainer>
+                            <Tab.Navigator
+                                screenOptions={createScreenOptions}
+                                tabBarOptions={{ activeTintColor: 'tomato', inactiveTintColor: 'gray' }}
+                            >
+                                <Tab.Screen name='Restaurants' component={Restaurants} />
+                                <Tab.Screen name='Map' component={Map} />
+                                <Tab.Screen name='Settings' component={Settings} />
+                            </Tab.Navigator>
+                        </NavigationContainer>
+                    </RestaurantsContextProvider>
+                </LocationContextProvider>
             </ThemeProvider>
             <ExpoStatusBar style='auto' />
         </>
