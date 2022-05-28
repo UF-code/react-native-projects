@@ -39,26 +39,28 @@ export const RestaurantScreen = () => {
 
     return (
         <>
-            {isLoading && (
-                <LoadingContainer>
-                    <Loading size={50} animating={true} color={Colors.blue300} />
-                </LoadingContainer>
-            )}
+            <SafeArea>
+                {isLoading && (
+                    <LoadingContainer>
+                        <Loading size={50} animating={true} color={Colors.blue300} />
+                    </LoadingContainer>
+                )}
 
-            <Search />
+                <Search />
 
-            <RestaurantList
-                data={restaurants}
-                renderItem={({ item }) => {
-                    return (
-                        <Spacer position='bottom' size='large'>
-                            <RestaurantInfoCard restaurant={item} />
-                        </Spacer>
-                    )
-                }}
-                keyExtractor={(item) => item.name}
-                // contentContainerStyle={{padding: 16}}
-            />
+                <RestaurantList
+                    data={restaurants}
+                    renderItem={({ item }) => {
+                        return (
+                            <Spacer position='bottom' size='large'>
+                                <RestaurantInfoCard restaurant={item} />
+                            </Spacer>
+                        )
+                    }}
+                    keyExtractor={(item) => item.name}
+                    // contentContainerStyle={{padding: 16}}
+                />
+            </SafeArea>
         </>
     )
 }

@@ -6,7 +6,6 @@ import { LocationContext } from '../../../services/location/location.context.jsx
 
 const SearchContainer = styled.View`
     padding: ${(props) => props.theme.space[3]};
-    background-color: ${(props) => props.theme.colors.bg.primary};
 `
 
 export const Search = () => {
