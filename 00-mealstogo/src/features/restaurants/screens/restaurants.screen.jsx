@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, Pressable } from 'react-native'
 import { Searchbar } from 'react-native-paper'
 // COMPONENTS
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component.jsx'
@@ -34,9 +34,10 @@ const LoadingContainer = styled.View`
 // const isAndroid = Platform.OS === 'android'
 // console.log(StatusBar.currentHeight)
 
-export const RestaurantScreen = () => {
+export const RestaurantScreen = ({ navigation }) => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext)
 
+    console.log(navigation)
     return (
         <>
             <SafeArea>
@@ -52,9 +53,11 @@ export const RestaurantScreen = () => {
                     data={restaurants}
                     renderItem={({ item }) => {
                         return (
-                            <Spacer position='bottom' size='large'>
-                                <RestaurantInfoCard restaurant={item} />
-                            </Spacer>
+                            <Pressable onPress={() => navigation.navigate('RestaurantDetail')}>
+                                <Spacer position='bottom' size='large'>
+                                    <RestaurantInfoCard restaurant={item} />
+                                </Spacer>
+                            </Pressable>
                         )
                     }}
                     keyExtractor={(item) => item.name}
