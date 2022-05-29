@@ -4,6 +4,7 @@ import open from '../../../../assets/open'
 // components
 import { Spacer } from '../../../components/spacer/spacer.component.jsx'
 import { Text } from '../../../components/typography/text.component.jsx'
+import { Favourite } from '../../../components/favourites/favourite.component.jsx'
 // styles
 import {
     Icon,
@@ -36,6 +37,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
     return (
         <RestaurantCard elevation={5}>
+            <Favourite />
             <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
 
             <Info>

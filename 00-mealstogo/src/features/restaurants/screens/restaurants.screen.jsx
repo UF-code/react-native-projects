@@ -12,6 +12,7 @@ import styled from 'styled-components/native'
 import { ActivityIndicator, Colors } from 'react-native-paper'
 //
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context.jsx'
+import { FavouritesContext } from '../../../services/favourites/favourites.context.jsx'
 
 // const RestaurantList = styled(FlatList)`
 //     padding: 16px;
@@ -36,6 +37,7 @@ const LoadingContainer = styled.View`
 
 export const RestaurantScreen = ({ navigation }) => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext)
+    const { favourites } = useContext(FavouritesContext)
 
     // console.log(navigation)
     return (
