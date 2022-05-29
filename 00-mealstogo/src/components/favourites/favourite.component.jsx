@@ -1,3 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import styled from 'styled-components/native'
+import { AntDesign } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native'
 
-export const Favourite = () => {}
+import { FavouritesContext } from '../../services/favourites/favourites.context.jsx'
+
+const FavouriteButton = styled(TouchableOpacity)`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9;
+`
+// width: 64px;
+// border-radius: 50px;
+// background-color: transparent;
+// border-color: #20232a;
+
+export const Favourite = () => {
+    const { favourites, addToFavourites, removeFromFavourites } = useContext(FavouritesContext)
+
+    return (
+        <FavouriteButton>
+            <AntDesign name='heart' size={24} color='red' />
+        </FavouriteButton>
+    )
+}
