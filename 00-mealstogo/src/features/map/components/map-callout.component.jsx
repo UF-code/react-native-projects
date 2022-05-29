@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from 'styled-components/native'
 
-const MyText = styled.Text``
+import { CompactRestaurantInfo } from '../../../components/restaurant/compact-restaurant-info.component.jsx'
 
 export const MapCallout = ({ restaurant }) => {
-    return <MyText>{restaurant.name}</MyText>
+    return <CompactRestaurantInfo restaurant={restaurant} />
 }
