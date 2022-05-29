@@ -18,7 +18,8 @@ export const MapScreen = () => {
 
     const [latDelta, setLatDelta] = useState(0)
 
-    const { viewport } = location
+    const { lat, lng, viewport } = location
+    console.log(viewport)
 
     useEffect(() => {
         const northeastLat = viewport.northeast.lat
@@ -26,12 +27,19 @@ export const MapScreen = () => {
 
         const latDelta = northeastLat - southwestLat
         setLatDelta(latDelta)
-    }, [location])
+    }, [location, viewport])
 
     return (
         <>
             <Search />
-            <Map>
+            <Map
+                region={{
+                    latitude: lat,
+                    longitude: lng,
+                    latitudeDelta: latDelta,
+                    longitudeDelta: 0.02,
+                }}
+            >
                 {restaurants.map((restaurant) => {
                     return null
                 })}
