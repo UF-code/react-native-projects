@@ -16,6 +16,7 @@ import { FavouritesContextProvider } from './src/services/favourites/favourites.
 
 import * as firebase from 'firebase'
 import 'firebase/auth'
+import { AuthenticationContextProvider } from './src/services/authentication/authentication.context'
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAtxUacoqj-NPgkpqJYI7G9DClKim5_4cg',
@@ -48,13 +49,15 @@ export default function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
-                <FavouritesContextProvider>
-                    <LocationContextProvider>
-                        <RestaurantsContextProvider>
-                            <Navigation />
-                        </RestaurantsContextProvider>
-                    </LocationContextProvider>
-                </FavouritesContextProvider>
+                <AuthenticationContextProvider>
+                    <FavouritesContextProvider>
+                        <LocationContextProvider>
+                            <RestaurantsContextProvider>
+                                <Navigation />
+                            </RestaurantsContextProvider>
+                        </LocationContextProvider>
+                    </FavouritesContextProvider>
+                </AuthenticationContextProvider>
             </ThemeProvider>
             <ExpoStatusBar style='auto' />
         </>
