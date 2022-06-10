@@ -12,6 +12,26 @@ import { RestaurantsContextProvider } from './src/services/restaurants/restauran
 import { LocationContextProvider } from './src/services/location/location.context.jsx'
 import { FavouritesContextProvider } from './src/services/favourites/favourites.context.jsx'
 
+// FIREBASE
+
+import * as firebase from 'firebase'
+import 'firebase/auth'
+
+const firebaseConfig = {
+    apiKey: 'AIzaSyAtxUacoqj-NPgkpqJYI7G9DClKim5_4cg',
+    authDomain: 'mealstogo-b724b.firebaseapp.com',
+    projectId: 'mealstogo-b724b',
+    storageBucket: 'mealstogo-b724b.appspot.com',
+    messagingSenderId: '1029680494843',
+    appId: '1:1029680494843:web:dc4d602792a5c6033ed85e',
+}
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
+}
+
+// FIREBASE
+
 export default function App() {
     const [oswaldLoaded] = useOswald({
         Oswald_400Regular,
