@@ -1,6 +1,7 @@
 import * as firebase from 'firebase'
-import 'firebase/auth'
+// import 'firebase/auth'
 
-const loginRequest = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+export const loginRequest = (email, password) => {
+    // console.log(email, password, 'hey')
+    firebase.auth().signInWithEmailAndPassword('email@email.com', 'password')
 }

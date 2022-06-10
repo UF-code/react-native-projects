@@ -16,7 +16,7 @@ import { FavouritesContextProvider } from './src/services/favourites/favourites.
 
 import * as firebase from 'firebase'
 import 'firebase/auth'
-import { AuthenticationContextProvider } from './src/services/authentication/authentication.context'
+import { AuthenticationContextProvider } from './src/services/authentication/authentication.context.js'
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAtxUacoqj-NPgkpqJYI7G9DClKim5_4cg',
