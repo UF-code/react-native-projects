@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { FlatList, TouchableOpacity } from 'react-native'
-import { Searchbar } from 'react-native-paper'
+
 // COMPONENTS
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component.jsx'
 import { Search } from '../components/search.components.jsx'
 import { Spacer } from '../../../components/spacer/spacer.component.jsx'
 import { FavouritesBar } from '../../../components/favourites/favourites-bar.component.jsx'
 import { SafeArea } from '../../../components/utility/safe-area.component.jsx'
+//
+import { FadeInView } from '../../../components/animations/fade.animation.js'
 //
 import styled from 'styled-components/native'
 //
@@ -51,8 +53,13 @@ export const RestaurantScreen = ({ navigation }) => {
                     </LoadingContainer>
                 )}
 
-                <Search isFavouritesToggled={isToggled} onFavouritesToggle={() => setIsToggled(!isToggled)} />
-                {isToggled && <FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
+                <Search
+                    isFavouritesToggled={isToggled}
+                    onFavouritesToggle={() => setIsToggled(!isToggled)}
+                />
+                {isToggled && (
+                    <FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />
+                )}
                 <RestaurantList
                     data={restaurants}
                     renderItem={({ item }) => {
@@ -65,7 +72,9 @@ export const RestaurantScreen = ({ navigation }) => {
                                 }
                             >
                                 <Spacer position='bottom' size='large'>
-                                    <RestaurantInfoCard restaurant={item} />
+                                    <FadeInView>
+                                        <RestaurantInfoCard restaurant={item} />
+                                    </FadeInView>
                                 </Spacer>
                             </TouchableOpacity>
                         )
