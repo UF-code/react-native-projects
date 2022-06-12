@@ -5,6 +5,17 @@ https://drive.google.com/file/d/1BxPAHO8FxGoBcL4mtinisKrV9MtqCOtB/view?usp=shari
 https://user-images.githubusercontent.com/67328993/173248551-238e971f-6b07-4b80-b9e6-d107bd43405f.mp4
 
 # Proje Degerlendirmesi
+Girisim amaci, Takim Rehberi, Arayuz, Veritabani, Logic
+
+# Girisim Amaci
+
+# Takim Rehberi
+
+# Arayuz
+
+# Veritabani
+
+# Logic
 
 
 # Kullanılan Teknolojiler
