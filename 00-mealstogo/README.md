@@ -1,4 +1,9 @@
 
+# Tubitak Hazirlik Seviyesi(THS 5)
+![tubitak1](https://user-images.githubusercontent.com/67328993/173249970-33dcf5f3-7c55-4d88-a2e6-b402c574acc0.png)
+![tubitak2](https://user-images.githubusercontent.com/67328993/173249972-12d1fe30-9e03-4a06-828b-93664055c791.png)
+
+
 # Android APK
 https://drive.google.com/file/d/1BxPAHO8FxGoBcL4mtinisKrV9MtqCOtB/view?usp=sharing
 
