@@ -1,5 +1,9 @@
 
-https://github.com/uf-code/react-native-projects/blob/master/00-mealstogo/uf-code.mp4
+
+
+
+https://user-images.githubusercontent.com/67328993/173248551-238e971f-6b07-4b80-b9e6-d107bd43405f.mp4
+
 
 # Kullanılan Teknolojiler
 React, React Native, JavaScript, CSS, Firebase, Styled-Components, Context API, Google Fonts
