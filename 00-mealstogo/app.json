@@ -4,10 +4,10 @@
         "slug": "00-mealstogo",
         "version": "1.0.0",
         "orientation": "portrait",
-        "icon": "./assets/uf-icon.png",
+        "icon": "./assets/uf-code.png",
         "userInterfaceStyle": "light",
         "splash": {
-            "image": "./assets/uf-splash.png",
+            "image": "./assets/uf-code-splash.png",
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
@@ -20,9 +20,10 @@
         },
         "android": {
             "adaptiveIcon": {
-                "foregroundImage": "./assets/uf-icon.png",
+                "foregroundImage": "./assets/uf-code.png",
                 "backgroundColor": "#FFFFFF"
-            }
+            },
+            "package": "uf.code"
         }
     }
 }
