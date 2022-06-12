@@ -26,6 +26,7 @@ Musterilerin rahat kaliteli bir yemek deneyimi gerceklestirebilmesi adina api uz
 
 # Gereksinimler
 Production Version - Google Map API-KEY icin Google Developer Accountu gerekli fiyat tutari 25$
+
 Development Version - Free to Use
 
 # Kullanılan Teknolojiler
