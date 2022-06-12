@@ -15,7 +15,7 @@ UF-code aka Ugur FIRAT
 
 # Arayuz
 Arayuzde kullanicinin isteklerine hizli bir sekilde yanit verebilmek adina sade ve kolay secilebilir iconlar ve app dizayni secildi.
-Applikasyonda devamliligi ve kaliteyi arttirmak adina olusturdugum temanin disina cikilmadi ve buda sade kaliteli bir gorunum ve dizayn elde etmemi sagladi. Spesifik kod butunu => https://github.com/uf-code/react-native-projects/tree/master/00-mealstogo/src/infrastructure/theme 
+Applikasyonda devamliligi ve kaliteyi arttirmak adina olusturulan temanin disina cikilmadi ve buda sade kaliteli bir gorunum ve dizayn elde etmemi sagladi. Spesifik kod butunu => https://github.com/uf-code/react-native-projects/tree/master/00-mealstogo/src/infrastructure/theme 
 Applikasyon dizayni genel olarak componentlar ve screenler uzerinden dizayn edildi componentlarin kolaylik sagladigi ve moduler oldugu icin ihtiyacimiz olan screenlerde tekrar kullanabildik componentlarin ve screenlerin dizayni Styled-Componentlarla yapildi bunun sebebi temanin surdurebilirligi ve butunlugu. Componentlar ve screenler arasi static veri akisini ise Reactin icerisinde bulunan built-in veri akisi containeri olan Context API kullanildi.
 
 # Veritabani
