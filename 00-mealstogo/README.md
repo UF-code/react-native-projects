@@ -1,6 +1,5 @@
 
-<video src='https://github.com/uf-code/react-native-projects/blob/master/00-mealstogo/uf-code.mp4' width=180/>
-
+https://github.com/uf-code/react-native-projects/blob/master/00-mealstogo/uf-code.mp4
 
 # Kullanılan Teknolojiler
 React, React Native, JavaScript, CSS, Firebase, Styled-Components, Context API, Google Fonts
