@@ -1,13 +1,12 @@
 {
   "expo": {
-    "name": "00-mealstogo",
-    "slug": "00-mealstogo",
+    "name": "focustime",
+    "slug": "snack-12de3d6b-7f01-4d5c-8a18-de6f739d0a28",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/uf-code.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/uf-code-splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,15 +17,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "uf.code"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/uf-code.png",
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "uf.code"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
   }
 }
